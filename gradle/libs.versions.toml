@@ -1,6 +1,7 @@
 [versions]
 # Library and plugin versions
 kotlin = "2.3.21"
+composeMultiplatform = "1.10.3"
 
 # sample module's configuration information
 sample-group = "com.sample.app"
@@ -13,3 +14,4 @@ sample-mainClass = "com.sample.app.MainAppKt"
 
 [plugins]
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+compose-multiplatform = { id = "org.jetbrains.compose", version.ref = "composeMultiplatform" }
