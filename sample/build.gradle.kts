@@ -1,3 +1,4 @@
+import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
@@ -13,6 +14,17 @@ kotlin {
     jvm("desktop") {
         compilerOptions {
             jvmTarget = JvmTarget.JVM_21
+        }
+    }
+}
+
+compose.desktop {
+    application {
+        mainClass = libs.versions.sample.mainClass.get()
+        nativeDistributions {
+            targetFormats = setOf(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
+            packageName = libs.versions.sample.distributionPackageName.get()
+            packageVersion = libs.versions.sample.distributionPackageVersion.get()
         }
     }
 }

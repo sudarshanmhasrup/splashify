@@ -8,6 +8,10 @@ sample-group = "com.sample.app"
 sample-version = "1.0.0"
 sample-mainClass = "com.sample.app.MainAppKt"
 
+# sample module's distribution information
+sample-distributionPackageName = "com.sample.app"
+sample-distributionPackageVersion = "1.0.0"
+
 [libraries]
 
 [bundles]
