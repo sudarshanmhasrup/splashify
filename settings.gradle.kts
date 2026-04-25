@@ -18,3 +18,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+
+include(":sample")
