@@ -2,6 +2,11 @@
 # Library and plugin versions
 kotlin = "2.3.21"
 
+# sample module's configuration information
+sample-group = "com.sample.app"
+sample-version = "1.0.0"
+sample-mainClass = "com.sample.app.MainAppKt"
+
 [libraries]
 
 [bundles]
