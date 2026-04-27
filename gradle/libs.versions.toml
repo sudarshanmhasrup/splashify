@@ -3,6 +3,11 @@
 kotlin = "2.3.21"
 composeMultiplatform = "1.10.3"
 
+# library module's configuration and publishing information
+library-group = "io.github.sudarshanmhasrup.splashify"
+library-artifactId = "splashify"
+library-version = "1.0.0-alpha1"
+
 # sample module's configuration information
 sample-group = "com.sample.app"
 sample-version = "1.0.0"
