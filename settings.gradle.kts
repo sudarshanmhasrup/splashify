@@ -26,4 +26,5 @@ dependencyResolutionManagement {
     }
 }
 
+include(":library")
 include(":sample")
