@@ -16,6 +16,13 @@ kotlin {
             jvmTarget = JvmTarget.JVM_21
         }
     }
+
+    sourceSets {
+        val desktopMain by getting
+        desktopMain.dependencies {
+            implementation(libs.compose.multiplatform.ui)
+        }
+    }
 }
 
 mavenPublishing {
