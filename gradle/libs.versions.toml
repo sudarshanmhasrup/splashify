@@ -1,7 +1,22 @@
 [versions]
+# Library and plugin versions
+kotlin = "2.3.21"
+composeMultiplatform = "1.10.3"
+
+# sample module's configuration information
+sample-group = "com.sample.app"
+sample-version = "1.0.0"
+sample-mainClass = "com.sample.app.MainAppKt"
+
+# sample module's distribution information
+sample-distributionPackageName = "com.sample.app"
+sample-distributionPackageVersion = "1.0.0"
 
 [libraries]
 
 [bundles]
 
 [plugins]
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+compose-multiplatform = { id = "org.jetbrains.compose", version.ref = "composeMultiplatform" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
