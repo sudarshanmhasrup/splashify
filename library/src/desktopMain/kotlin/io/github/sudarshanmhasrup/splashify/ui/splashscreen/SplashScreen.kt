@@ -15,7 +15,6 @@ import androidx.compose.ui.window.WindowState
 import io.github.sudarshanmhasrup.splashify.internal.LocalSplashScreenStateManager
 import io.github.sudarshanmhasrup.splashify.ui.config.SplashScreenSize
 import io.github.sudarshanmhasrup.splashify.ui.config.SplashScreenStyle
-import kotlin.system.exitProcess
 
 /**
  * Displays a simple splash screen window for Compose Multiplatform desktop apps.
