@@ -12,6 +12,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.WindowPosition
 import androidx.compose.ui.window.WindowState
+import io.github.sudarshanmhasrup.splashify.internal.LocalSplashScreenStateManager
 import io.github.sudarshanmhasrup.splashify.ui.config.SplashScreenSize
 import io.github.sudarshanmhasrup.splashify.ui.config.SplashScreenStyle
 import kotlin.system.exitProcess
@@ -23,13 +24,13 @@ import kotlin.system.exitProcess
  *
  * @param size Size of the splash screen window.
  * @param style Visual style of the splash screen.
- * @param content Composable content to be shown inside the splash screen.
+ * @param content Composable content shown inside the splash screen. Provides current loader progress if needed.
  */
 @Composable
 fun SimpleSplashScreen(
     size: SplashScreenSize = SplashScreenSize(),
     style: SplashScreenStyle = SplashScreenStyle(),
-    content: @Composable () -> Unit
+    content: @Composable (Float) -> Unit
 ) {
     val windowState = WindowState(
         width = size.width,
@@ -42,6 +43,8 @@ fun SimpleSplashScreen(
         .background(color = style.backgroundColor)
         .fillMaxSize()
 
+    val splashScreenStateManager = LocalSplashScreenStateManager.current
+
     Window(
         resizable = false,
         focusable = false,
@@ -49,14 +52,14 @@ fun SimpleSplashScreen(
         transparent = true,
         alwaysOnTop = true,
         state = windowState,
-        onCloseRequest = { exitProcess(status = 0) }
+        onCloseRequest = {  }
     ) {
         Column(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = backgroundModifier
         ) {
-            content()
+            content(splashScreenStateManager.loaderProgress)
         }
     }
 }
