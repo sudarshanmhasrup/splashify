@@ -6,5 +6,5 @@ import androidx.compose.ui.unit.dp
 
 data class SplashScreenStyle(
     val backgroundColor: Color = Color.White,
-    val cornerRadius: Dp = 20.dp
+    val cornerRadius: Dp = 8.dp
 )
