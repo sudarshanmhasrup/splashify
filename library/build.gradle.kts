@@ -16,6 +16,15 @@ kotlin {
             jvmTarget = JvmTarget.JVM_21
         }
     }
+
+    sourceSets {
+        val desktopMain by getting
+        desktopMain.dependencies {
+            implementation(libs.kotlinx.coroutines.swing)
+            implementation(libs.kotlinx.coroutines)
+            implementation(libs.bundles.compose.multiplatform)
+        }
+    }
 }
 
 mavenPublishing {
