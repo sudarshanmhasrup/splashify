@@ -13,11 +13,11 @@ internal class SplashScreenStateManager {
     var showSplashScreen by mutableStateOf(true)
     var loaderProgress by mutableStateOf(0f)
 
-    private val scope = CoroutineScope(Dispatchers.Main)
+    private val scope = CoroutineScope(context = Dispatchers.Main)
 
     init {
         scope.launch {
-            for (i in 0..10) {
+            repeat(times = 10) {
                 loaderProgress++
                 delay(timeMillis = 250)
             }
