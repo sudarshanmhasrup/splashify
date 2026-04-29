@@ -68,6 +68,16 @@ fun SimpleSplashScreen(
     }
 }
 
+/**
+ * Displays a splash screen with a progress indicator.
+ *
+ * Allows custom content in the center and shows progress at the bottom.
+ *
+ * @param size Size of the splash screen.
+ * @param style Visual style of the splash screen.
+ * @param indicatorStyle Visual style of the progress indicator.
+ * @param content Composable content shown above the progress indicator.
+ */
 @Composable
 fun ProgressiveSplashScreen(
     size: SplashScreenSize = SplashScreenSize(),
