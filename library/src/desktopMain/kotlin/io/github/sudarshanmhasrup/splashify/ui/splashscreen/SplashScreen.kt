@@ -17,11 +17,11 @@ import io.github.sudarshanmhasrup.splashify.ui.config.SplashScreenSize
 import io.github.sudarshanmhasrup.splashify.ui.config.SplashScreenStyle
 
 /**
- * Displays a simple splash screen window for Compose Multiplatform desktop apps.
+ * Displays a simple splash screen for Compose Multiplatform desktop apps.
  *
  * Allows customizing size and style, and provides a slot to render custom UI content.
  *
- * @param size Size of the splash screen window.
+ * @param size Size of the splash screen.
  * @param style Visual style of the splash screen.
  * @param content Composable content shown inside the splash screen. Provides current loader progress if needed.
  */
