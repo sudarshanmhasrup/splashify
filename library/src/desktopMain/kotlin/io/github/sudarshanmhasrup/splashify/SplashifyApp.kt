@@ -14,7 +14,7 @@ import io.github.sudarshanmhasrup.splashify.internal.SplashScreenStateManager
  * Internally manages splash state and provides it to splash composables.
  *
  * @param splashScreen Composable shown as the splash screen.
- * @param content Composable shown after the splash screen completes.
+ * @param content Composable shown after the splash screen completes. Should contain your main app Window.
  */
 @Composable
 fun SplashifyApp(
