@@ -2,17 +2,22 @@ package io.github.sudarshanmhasrup.splashify.ui.splashscreen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.WindowPosition
 import androidx.compose.ui.window.WindowState
 import io.github.sudarshanmhasrup.splashify.internal.LocalSplashScreenStateManager
+import io.github.sudarshanmhasrup.splashify.ui.config.SplashIndicatorStyle
 import io.github.sudarshanmhasrup.splashify.ui.config.SplashScreenSize
 import io.github.sudarshanmhasrup.splashify.ui.config.SplashScreenStyle
 
@@ -51,7 +56,7 @@ fun SimpleSplashScreen(
         transparent = true,
         alwaysOnTop = true,
         state = windowState,
-        onCloseRequest = {  }
+        onCloseRequest = { }
     ) {
         Column(
             verticalArrangement = Arrangement.Center,
@@ -59,6 +64,36 @@ fun SimpleSplashScreen(
             modifier = backgroundModifier
         ) {
             content(splashScreenStateManager.loaderProgress)
+        }
+    }
+}
+
+@Composable
+fun ProgressiveSplashScreen(
+    size: SplashScreenSize = SplashScreenSize(),
+    style: SplashScreenStyle = SplashScreenStyle(),
+    indicatorStyle: SplashIndicatorStyle = SplashIndicatorStyle(),
+    content: @Composable () -> Unit
+) {
+    SimpleSplashScreen(size = size, style = style) { progress ->
+        Column(
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier.fillMaxSize(),
+        ) {
+            val contentBackgroundModifier = Modifier
+                .fillMaxWidth()
+                .weight(1f)
+
+            Box(contentAlignment = Alignment.Center, modifier = contentBackgroundModifier) {
+                content()
+            }
+            LinearProgressIndicator(
+                progress = { progress },
+                color = indicatorStyle.color,
+                trackColor = indicatorStyle.trackColor,
+                modifier = Modifier.fillMaxWidth()
+            )
         }
     }
 }
