@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.dp
  * @param thickness Thickness of the indicator.
  */
 data class SplashIndicatorStyle(
-    val color: Color = Color.White,
+    val color: Color = Color.Black,
     val trackColor: Color = Color.Gray,
     val thickness: Dp = 4.dp
 )
