@@ -20,7 +20,9 @@ kotlin {
     sourceSets {
         val desktopMain by getting
         desktopMain.dependencies {
-            implementation(libs.compose.multiplatform.ui)
+            implementation(libs.kotlinx.coroutines.swing)
+            implementation(libs.kotlinx.coroutines)
+            implementation(libs.bundles.compose.multiplatform)
         }
     }
 }
