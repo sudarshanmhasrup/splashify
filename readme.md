@@ -6,8 +6,8 @@
 ### About this project
 
 Adding splash screens to **Compose Multiplatform (CMP) desktop applications** often involves repetitive code for window
-management and state synchronization. Splashify provides a simple way to integrate splash screens into CMP desktop apps
-with minimal configuration.
+management and state synchronization. `Splashify` provides a simple way to integrate splash screens into CMP desktop
+apps with minimal configuration.
 
 ### Installation guide
 
