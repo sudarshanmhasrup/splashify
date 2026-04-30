@@ -128,8 +128,9 @@ fun SplashScreenContent() {
 
 ### Contributing
 
-Contributions are welcome. Feel free to open an issue or submit a pull request on GitHub.
+Contributions are welcome! Please feel free to open an issue or submit a pull request.
 
-### Closing note
+### Thank you! 🙌
 
-If you find `Splashify` helpful, consider giving it a star on GitHub. Happy coding.
+Thank you so much for checking out the `Splashify` project. If you like my work on this project, feel free to give a
+star to the repository. Happy coding!
