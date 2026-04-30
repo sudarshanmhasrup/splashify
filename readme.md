@@ -5,43 +5,60 @@
 
 ### About this project
 
-Adding splash screens to desktop applications often involves repetitive code for window management and state
-synchronization. Splashify provides a simple way to integrate splash screens into Compose Multiplatform desktop apps
+Adding splash screens to **Compose Multiplatform (CMP) desktop applications** often involves repetitive code for window
+management and state synchronization. Splashify provides a simple way to integrate splash screens into CMP desktop apps
 with minimal configuration.
 
 ### Installation guide
 
-Add the Splashify dependency to your project.
+To get started, add the `Splashify` dependency to your existing [Gradle](https://gradle.org/) project. To make
+`Splashify` available in any module's classpath, copy and paste the following line into your module's `build.gradle.kts`
+file under the `dependencies` block as shown below.
 
 ```kotlin
 kotlin {
     sourceSets {
-        commonMain.dependencies {
+        jvmMain.dependencies {
+            // Other dependencies will go here
             implementation("io.github.sudarshanmhasrup.splashify:splashify:1.0.0-alpha1")
         }
     }
 }
 ```
 
-Quick copy:
+To quickly copy the dependency, you can use the following command:
 
 ```kotlin
 implementation("io.github.sudarshanmhasrup.splashify:splashify:1.0.0-alpha1")
 ```
 
-### Version catalog setup
+If your project uses a version catalog for centralized dependency management, then add the following lines to your
+`libs.versions.toml` file:
 
-Add the following to your `libs.versions.toml` file:
-
-```toml
+```
 [versions]
+# Other version declarations will go here
 splashify = "1.0.0-alpha1"
 
 [libraries]
+# Other libraries declarations will go here
 splashify = { module = "io.github.sudarshanmhasrup.splashify:splashify", version.ref = "splashify" }
 ```
 
-Then use it in your `build.gradle.kts`:
+Then you can refer to the dependency in your module's `build.gradle.kts` file like this:
+
+```kotlin
+kotlin {
+    sourceSets {
+        jvmMain.dependencies {
+            // Other dependencies will go here
+            implementation(libs.splashify)
+        }
+    }
+}
+```
+
+To quickly copy the dependency, you can use the following command:
 
 ```kotlin
 implementation(libs.splashify)
@@ -102,7 +119,6 @@ fun SplashScreenContent() {
 * Internal splash state handling
 * Built-in support for progress tracking
 * Customizable size, style, and indicators
-* Professional look for desktop apps
 
 ### Supported platforms
 
@@ -116,4 +132,4 @@ Contributions are welcome. Feel free to open an issue or submit a pull request o
 
 ### Closing note
 
-If you find Splashify helpful, consider giving it a star on GitHub. Happy coding.
+If you find `Splashify` helpful, consider giving it a star on GitHub. Happy coding.
