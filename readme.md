@@ -74,52 +74,113 @@ implementation(libs.splashify)
 
 ### Usage guide
 
-Follow these examples to integrate Splashify into your application.
+Follow these examples to integrate Splashify into your Compose Multiplatform desktop app.
 
-#### Wrap app using SplashifyApp
+#### Step 1: Wrap your app using SplashifyApp
 
-The `content` block must contain your main application `Window`.
+The `content` block should contain your main application `Window`.
 
 ```kotlin
 fun main() = application {
     SplashifyApp(
-        splashScreen = { SplashScreenContent() }
+        splashScreen = { SplashScreen() }
     ) {
-        Window(onCloseRequest = ::exitApplication) {
+        Window(
+            title = "My App",
+            onCloseRequest = ::exitApplication
+        ) {
             MainApp()
         }
     }
 }
 ```
 
-#### Example for SimpleSplashScreen
+#### Step 2: Create a simple splash screen
 
-Use `SimpleSplashScreen` for basic splash screens. It provides access to the loading progress.
+Use `SimpleSplashScreen` when you want full control over the splash content.
 
 ```kotlin
 @Composable
-fun SplashScreenContent() {
-    val size = SplashScreenSize(width = 500.dp, height = 300.dp)
-    val style = SplashScreenStyle(backgroundColor = Color.DarkGray)
+fun SplashScreen() {
+    val size = SplashScreenSize(
+        width = 600.dp,
+        height = 380.dp
+    )
 
-    SimpleSplashScreen(size = size, style = style) { progress ->
-        Text("Loading: ${(progress * 100).toInt()}%")
+    val style = SplashScreenStyle(
+        backgroundColor = Color.Black,
+        cornerRadius = 16.dp
+    )
+
+    SimpleSplashScreen(
+        size = size,
+        style = style
+    ) { progress ->
+        Text(
+            text = "Loading ${(progress * 100).toInt()}%",
+            color = Color.White
+        )
     }
 }
 ```
 
-#### Example for ProgressiveSplashScreen
+#### Step 3: Use progressive splash screen
 
-Use `ProgressiveSplashScreen` to automatically include a progress indicator at the bottom.
+Use `ProgressiveSplashScreen` when you want a built-in progress indicator.
 
 ```kotlin
 @Composable
-fun SplashScreenContent() {
+fun SplashScreen() {
     ProgressiveSplashScreen {
-        Text("Splashify")
+        Text(text = "Splashify")
     }
 }
 ```
+
+#### Step 4: Customize progressive splash screen
+
+You can customize the window size, background, corner radius, and progress indicator.
+
+```kotlin
+@Composable
+fun SplashScreen() {
+    val size = SplashScreenSize(
+        width = 600.dp,
+        height = 380.dp
+    )
+
+    val style = SplashScreenStyle(
+        backgroundColor = Color.Black,
+        cornerRadius = 16.dp
+    )
+
+    val indicatorStyle = SplashIndicatorStyle(
+        color = Color.White,
+        trackColor = Color.Black,
+        thickness = 2.dp
+    )
+
+    ProgressiveSplashScreen(
+        size = size,
+        style = style,
+        indicatorStyle = indicatorStyle
+    ) {
+        Text(
+            text = "Splashify",
+            fontSize = 28.sp,
+            fontWeight = FontWeight.SemiBold,
+            color = Color.White
+        )
+    }
+}
+```
+
+#### Available configuration classes
+
+* `SplashScreenSize`: Controls splash window width and height.
+* `SplashScreenStyle`: Controls splash background color and corner radius.
+* `SplashIndicatorStyle`: Controls progress indicator color, track color, and thickness.
+
 
 ### Features
 
