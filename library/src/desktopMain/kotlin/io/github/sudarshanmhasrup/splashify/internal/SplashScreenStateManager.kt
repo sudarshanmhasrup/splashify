@@ -10,8 +10,8 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 internal class SplashScreenStateManager {
-    var showSplashScreen by mutableStateOf(true)
-    var loaderProgress by mutableStateOf(0.0f)
+    var showSplashScreen by mutableStateOf(value = true)
+    var loaderProgress by mutableStateOf(value = 0.0f)
 
     private val scope = CoroutineScope(context = Dispatchers.Main)
 
