@@ -13,7 +13,7 @@ apps with minimal configuration.
 
 Check out Splashify in action:
 
-<video src="/splashify-demo-video.mp4" controls width="700"></video>
+<video src="https://github.com/user-attachments/assets/5b8a4638-323e-4651-a70d-19ec4d1f0d75" controls width="700"></video>
 
 > A simple Compose Multiplatform desktop app showcasing splash screen integration using Splashify.
 
