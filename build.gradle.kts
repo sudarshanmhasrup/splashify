@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.compose.multiplatform) apply false
     alias(libs.plugins.compose.compiler) apply false
     alias(libs.plugins.maven.publish) apply false
+    alias(libs.plugins.versions)
 }
 
 layout.buildDirectory.set(file("$rootDir/.build/project"))
