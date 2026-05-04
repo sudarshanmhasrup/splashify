@@ -1,7 +1,7 @@
 [versions]
 # Library and plugin versions
 kotlin = "2.3.21"
-kotlinx = "1.10.2"
+coroutines = "1.10.2"
 composeMultiplatform = "1.10.3"
 material3 = "1.9.0"
 mavenPublish = "0.36.0"
@@ -22,8 +22,8 @@ sample-distributionPackageName = "com.sample.app"
 sample-distributionPackageVersion = "1.0.0"
 
 [libraries]
-kotlinx-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx" }
-kotlinx-coroutines-swing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "kotlinx" }
+kotlinx-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlinx-coroutines-swing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "coroutines" }
 compose-runtime = { module = "org.jetbrains.compose.runtime:runtime", version.ref = "composeMultiplatform" }
 compose-multiplatform-ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "composeMultiplatform" }
 compose-multiplatform-foundation = { module = "org.jetbrains.compose.foundation:foundation", version.ref = "composeMultiplatform" }
