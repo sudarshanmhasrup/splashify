@@ -23,7 +23,7 @@ jobs:
                   cat <<'EOF' > site/index.md
                   ---
                   layout: default
-                  title: Localina
+                  title: Splashify
                   ---
                   
                   EOF
