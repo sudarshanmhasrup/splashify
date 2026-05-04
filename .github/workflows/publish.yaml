@@ -1,4 +1,4 @@
-name: "Publish Library to Maven Central"
+name: "Publish Library to MavenCentral"
 
 on:
     release:
